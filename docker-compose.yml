@@ -1,0 +1,52 @@
+services:
+
+  nginx:
+    image: nginx:alpine
+    container_name: yandex_test-nginx
+    restart: unless-stopped
+    depends_on:
+      - php
+    volumes:
+      - ./src:/var/www
+      - ./docker/nginx:/etc/nginx/conf.d/
+    ports:
+      - "${NGINX_PORT}:80"
+    networks:
+      - internals
+
+  php:
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile
+    container_name: yandex_test-php
+    working_dir: /var/www/
+    environment:
+      PSYSH_CONFIG_DIR: /tmp/psysh
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - ./src:/var/www
+    networks:
+      - internals
+    ports:
+      - "5173:5173"
+    depends_on:
+      - db_mysql
+
+  db_mysql:
+    container_name: yandex_test-db_mysql
+    image: mysql:8.0
+    ports:
+      - "3307:3306"
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: yandex_core
+    volumes:
+      - ./docker/mysql/data:/var/lib/mysql
+    networks:
+      - internals
+
+networks:
+  internals:
+    driver: bridge

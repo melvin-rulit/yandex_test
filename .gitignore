@@ -1,0 +1,30 @@
+# Docker
+/docker/mysql/data/
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+
+# Laravel
+.env
+.env.backup
+.env.production
+.phpunit.result.cache
+/node_modules
+/public/build
+/public/hot
+/public/storage
+/storage/*.key
+/storage/pail
+/vendor
+/.phpunit.cache
+
+# Ide
+/.fleet
+/.nova
+/.vscode
+/.idea
+.phpactor.json
+
