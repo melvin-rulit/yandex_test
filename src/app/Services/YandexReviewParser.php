@@ -8,10 +8,10 @@ use App\DTO\YandexReviewDto;
 
 class YandexReviewParser
 {
-    private const MAX_REVIEWS = 10;
-
     public function parse(string $html): array
     {
+        $maxReviews = config('yandex.max_reviews');
+
         $dom = new DOMDocument();
         libxml_use_internal_errors(true);
         $dom->loadHTML($html);
@@ -30,7 +30,7 @@ class YandexReviewParser
         $seen = [];
 
         foreach ($reviewsNodes as $reviewNode) {
-            if (count($reviewsData) >= self::MAX_REVIEWS) {
+            if (count($reviewsData) >= $maxReviews) {
                 break;
             }
 

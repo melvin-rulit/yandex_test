@@ -8,9 +8,9 @@ class YandexReviewCache
 {
     protected int $cacheMinutes;
 
-    public function __construct(int $cacheMinutes = 30)
+    public function __construct()
     {
-        $this->cacheMinutes = $cacheMinutes;
+        $this->cacheMinutes = config('yandex.cache_minutes');
     }
 
     /**
