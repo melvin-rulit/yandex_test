@@ -14,7 +14,7 @@ class YandexSettingResource extends JsonResource
         return [
             'id' => $this->id,
             'org_url' => $this->org_url,
-            'message' => 'Данные успешно сохранены',
+            'message' => __('data saved successfully'),
         ];
     }
 }

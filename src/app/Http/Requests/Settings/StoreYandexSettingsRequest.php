@@ -28,8 +28,8 @@ class StoreYandexSettingsRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'org_url.required' => 'Ссылка на Яндекс обязательна для заполнения',
-            'org_url.url' => 'Ссылка должна быть корректного формата',
+            'org_url.required' => __('settings.yandex.org_url_required'),
+            'org_url.url' => __('settings.yandex.org_url_url'),
         ];
     }
 }

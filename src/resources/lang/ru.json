@@ -1,0 +1,7 @@
+{
+    "yandex_link_not_found": "Яндекс ссылка не найдена, перейдите в настройки и установите ссылку",
+    "could not get feedback. Check the link in the settings": "Не удалось получить отзывы. Проверьте ссылку в настройках",
+    "data saved successfully": "Данные успешно сохранены",
+    "settings.yandex.org_url_required": "Ссылка на Яндекс обязательна для заполнения",
+    "settings.yandex.org_url_url": "Ссылка должна быть корректного формата"
+}

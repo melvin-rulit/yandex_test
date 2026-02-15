@@ -1,0 +1,8 @@
+{
+    "yandex_link_not_found": "Yandex link not found, go to settings and set the link",
+    "could not get feedback. Check the link in the settings": "Could not get feedback. Check the link in the settings",
+    "data saved successfully": "Data saved successfully",
+    "settings.yandex.org_url_required": "A link to Yandex is required",
+    "settings.yandex.org_url_url": "The link must be in the correct format"
+
+}

@@ -30,7 +30,7 @@ class YandexReviewService
         $setting = YandexSetting::where('user_id', $userId)->first();
 
         if (!$setting || empty(trim($setting->org_url))) {
-            return ['error' => 'Яндекс.Ссылка не найдена, перейдите в настройки и установите ссылку'];
+            return ['error' => __('yandex_link_not_found')];
         }
 
         $cacheKey = $this->cache->makeKey($userId, $setting->org_url);
@@ -41,7 +41,7 @@ class YandexReviewService
             ])->get($setting->org_url);
 
             if ($response->failed()) {
-                return ['error' => 'Не удалось получить отзывы. Проверьте ссылку в настройках'];
+                 return ['error' => __('could not get feedback. Check the link in the settings')];
             }
 
             return $this->parser->parse($response->body());
