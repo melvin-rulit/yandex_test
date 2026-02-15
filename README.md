@@ -12,7 +12,7 @@
 
 ## 📥 1. Клонирование репозитория
 ```bash
-git clone https://github.com/your/project.git
+git clone https://github.com/melvin-rulit/yandex_test.git
 cd project
 ```
 📚 Установка переменных окружения:
