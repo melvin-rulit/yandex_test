@@ -37,6 +37,7 @@ php artisan migrate
 
 Вход в приложение
 ```bash
+ссылка на сервер: https://test.alserver.ru/login
 login: user@mail.com
 password: qwerty123
 ```
